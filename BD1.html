@@ -33,11 +33,11 @@
 
     <h1 id="hinweis">Bitte drücke den Screen...</h1>
 
-    <img id="mario" src="https://i.pinimg.com/originals/02/79/24/02792408d2e99b4a100e81f9c900cb1a.gif" alt="Mario">
+    <img id="mario" src="https://cdn.jsdelivr.net/gh/AsukiAoyama/BD1@main/Gif1.gif" alt="Mario">
 
-    <audio id="meinAudio" src="sound1.mp3" loop></audio>
+    <audio id="meinAudio" src="https://cdn.jsdelivr.net/gh/AsukiAoyama/BD1@main/sound1.mp3" loop></audio>
 
-    <script>
+   <script>
         const audio = document.getElementById('meinAudio');
         const hinweis = document.getElementById('hinweis');
         const mario = document.getElementById('mario');
@@ -47,7 +47,13 @@
             mario.style.display = 'block';
             audio.play();
         }, { once: true });
-    </script>
 
+        // Wartet 1500 ms nach Ende des Sounds und startet ihn neu
+        audio.addEventListener('ended', () => {
+            setTimeout(() => {
+                audio.play();
+            }, 1500);
+        });
+    </script>
 </body>
 </html>
